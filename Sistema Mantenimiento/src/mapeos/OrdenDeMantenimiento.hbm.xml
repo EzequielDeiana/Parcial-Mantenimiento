@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="datos.OrdenDeMantenimiento" table="ordendemantenimiento">
+		<id name="idOrdenDeMantenimiento" column="idordendemantenimiento">
+			<generator class="identity"></generator>
+		</id>
+		
+		<many-to-one name="ambiente" class="datos.Ambiente" column="ambiente"></many-to-one>
+		
+		<property name="problema" column="problema" type="string"></property>
+		<property name="fechaInicio" column="fechainicio" type="LocalDate"></property>
+		<property name="fechaFin" column="fechafin" type="LocalDate"></property>
+		<property name="costoDeReparacion" column="costodereparacion" type="double"></property>
+		<property name="terminada" column="terminada" type="boolean"></property>
+		<property name="pagada" column="pagada" type="boolean"></property>
+		<property name="estadoDuranteLaReparacion" column="estadorep" type="string"></property>
+		
+	</class>
+</hibernate-mapping>
